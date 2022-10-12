@@ -1,0 +1,67 @@
+/*
+* LED_test.c
+*
+* Created:
+*  Author: ammar
+*/
+
+#include "LED_test.h"
+
+ISR(TIMER_TIMER0_OVF_vect) {
+	timerCounter++;
+	
+	if (timerCounter >= 32) {
+		timerCounter = 0; // reset counter
+		myLed.mode = !(myLed.mode);
+		LED_write(myLed);
+	}
+}
+
+
+void ledTestSetup() {
+	u8 LocErrorStatus;
+	
+	timerCounter = 0; // Initialize Counter
+	
+	// ERR LED
+	errLed.port = PORTD;
+	errLed.pin = PIN7;
+	errLed.mode = LED_OFF;
+	
+	// LED
+	myLed.port = PORTA;
+	myLed.pin = PIN0;
+	myLed.mode = LED_OFF;
+
+	
+	// SWITCH
+	mySw.port = EXINT0_PORT;
+	mySw.pin = EXINT0_PIN;
+	mySw.interrupt_mode = SWITCH_EXINT_MODE;
+	mySw.pullup = SWITCH_PULLUP;
+	mySw.val = SWITCH_NULL;
+	
+	LED_init(myLed);
+	LED_init(errLed);
+	
+	//LocErrorStatus = SWITCH_init(mySw);
+
+
+	// INITIALIZE TIMER
+	LocErrorStatus = HW_Timer_init(HW_TIMER0, HW_TIMER_INTERRUPT_MODE);
+	if (LocErrorStatus != HW_TIMER_OK) {
+		errLed.mode = LED_ON;
+		LED_write(errLed);
+	}
+	
+	// START TIMER
+	LocErrorStatus = HW_Timer_start(HW_TIMER0);
+	if (LocErrorStatus != HW_TIMER_OK) {
+		errLed.mode = LED_ON;
+		LED_write(errLed);
+	}
+}
+
+
+void ledTest() {
+}

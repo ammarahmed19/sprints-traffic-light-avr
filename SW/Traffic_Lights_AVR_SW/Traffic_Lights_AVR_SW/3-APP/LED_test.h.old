@@ -1,0 +1,31 @@
+/*
+* LED_test.h
+*
+* Created: 9/18/2022 3:13:17 PM
+*  Author: ammar
+*/
+
+
+#ifndef LED_TEST_H_
+#define LED_TEST_H_
+
+#include "../1-MCAL/TIMER/TIMER.h"
+#include "../2-ECUAL/LED/LED.h"
+#include "../2-ECUAL/SWITCH/SWITCH.h"
+#include "../2-ECUAL/HW_TIMER/HW_TIMER.h"
+
+LED_obj myLed;
+
+LED_obj errLed;
+
+SWITCH_obj mySw;
+
+TIMER_obj myTimer;
+
+u8 timerCounter;
+
+void ledTestSetup();
+void ledTest();
+
+
+#endif /* LED_TEST_H_ */

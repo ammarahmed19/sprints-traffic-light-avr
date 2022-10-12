@@ -1,0 +1,44 @@
+2-ECUAL/LED/LED.d 2-ECUAL/LED/LED.o: ../2-ECUAL/LED/LED.c \
+ ../2-ECUAL/LED/LED.h ../2-ECUAL/LED/../../1-MCAL/DIO/DIO.h \
+ ../2-ECUAL/LED/../../1-MCAL/DIO/../../0-LIB/BIT_MATH.h \
+ ../2-ECUAL/LED/../../1-MCAL/DIO/../../0-LIB/STD_TYPES.h \
+ ../2-ECUAL/LED/../../1-MCAL/DIO/DIO_reg.h \
+ ../2-ECUAL/LED/../../1-MCAL/DIO/DIO_error.h \
+ ../2-ECUAL/LED/../../1-MCAL/DIO/DIO_private.h \
+ ../2-ECUAL/LED/LED_private.h ../2-ECUAL/LED/LED_error.h \
+ ../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT.h \
+ ../2-ECUAL/LED/../../1-MCAL/INTERRUPT/../../0-LIB/BIT_MATH.h \
+ ../2-ECUAL/LED/../../1-MCAL/INTERRUPT/../../0-LIB/STD_TYPES.h \
+ ../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT_private.h \
+ ../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT_error.h \
+ ../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT_reg.h
+
+../2-ECUAL/LED/LED.h:
+
+../2-ECUAL/LED/../../1-MCAL/DIO/DIO.h:
+
+../2-ECUAL/LED/../../1-MCAL/DIO/../../0-LIB/BIT_MATH.h:
+
+../2-ECUAL/LED/../../1-MCAL/DIO/../../0-LIB/STD_TYPES.h:
+
+../2-ECUAL/LED/../../1-MCAL/DIO/DIO_reg.h:
+
+../2-ECUAL/LED/../../1-MCAL/DIO/DIO_error.h:
+
+../2-ECUAL/LED/../../1-MCAL/DIO/DIO_private.h:
+
+../2-ECUAL/LED/LED_private.h:
+
+../2-ECUAL/LED/LED_error.h:
+
+../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT.h:
+
+../2-ECUAL/LED/../../1-MCAL/INTERRUPT/../../0-LIB/BIT_MATH.h:
+
+../2-ECUAL/LED/../../1-MCAL/INTERRUPT/../../0-LIB/STD_TYPES.h:
+
+../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT_private.h:
+
+../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT_error.h:
+
+../2-ECUAL/LED/../../1-MCAL/INTERRUPT/INTERRUPT_reg.h:

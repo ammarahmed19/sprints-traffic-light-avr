@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.microchip.xc8</ToolchainName>
+    <ProjectGuid>2285C48D-296E-43FD-A7B6-69885F64CFFD</ProjectGuid>
+    <avrdevice>ATmega32</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Traffic_Lights_AVR_SW</AssemblyName>
+    <Name>Traffic_Lights_AVR_SW</Name>
+    <RootNamespace>Traffic_Lights_AVR_SW</RootNamespace>
+    <ToolchainFlavour>XC8_2.36</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.52.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <com.microchip.xc8>
+        <com.microchip.xc8.common.optimization.RelaxBranches>True</com.microchip.xc8.common.optimization.RelaxBranches>
+        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <com.microchip.xc8.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>(%24DeviceMacro)</Value>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </com.microchip.xc8.compiler.symbols.DefSymbols>
+        <com.microchip.xc8.compiler.optimization.level>Optimize for size (-Os)</com.microchip.xc8.compiler.optimization.level>
+        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+        <com.microchip.xc8.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </com.microchip.xc8.linker.libraries.Libraries>
+      </com.microchip.xc8>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <com.microchip.xc8>
+        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <com.microchip.xc8.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>(%24DeviceMacro)</Value>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </com.microchip.xc8.compiler.symbols.DefSymbols>
+        <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
+        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+        <com.microchip.xc8.compiler.optimization.DebugLevel>Default (-g2)</com.microchip.xc8.compiler.optimization.DebugLevel>
+        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+        <com.microchip.xc8.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </com.microchip.xc8.linker.libraries.Libraries>
+        <com.microchip.xc8.assembler.debugging.DebugLevel>Default (-Wa,-g)</com.microchip.xc8.assembler.debugging.DebugLevel>
+      </com.microchip.xc8>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="0-LIB\BIT_MATH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="0-LIB\STD_TYPES.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO_reg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\DIO\DIO_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT_reg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\INTERRUPT\INTERRUPT_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER_reg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="1-MCAL\TIMER\TIMER_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\HW_TIMER\HW_TIMER.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\HW_TIMER\HW_TIMER.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\HW_TIMER\HW_TIMER_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\HW_TIMER\HW_TIMER_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\HW_TIMER\HW_TIMER_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\HW_TIMER\HW_TIMER_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\LED\LED.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\LED\LED.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\LED\LED_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\LED\LED_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\LED\LED_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\LED\LED_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\SWITCH\SWITCH.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\SWITCH\SWITCH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\SWITCH\SWITCH_error.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\SWITCH\SWITCH_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\SWITCH\SWITCH_test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="2-ECUAL\SWITCH\SWITCH_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="3-APP\app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="3-APP\app.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="0-LIB\" />
+    <Folder Include="1-MCAL\" />
+    <Folder Include="1-MCAL\DIO\" />
+    <Folder Include="1-MCAL\INTERRUPT\" />
+    <Folder Include="1-MCAL\TIMER\" />
+    <Folder Include="2-ECUAL\" />
+    <Folder Include="2-ECUAL\LED\" />
+    <Folder Include="2-ECUAL\HW_TIMER" />
+    <Folder Include="2-ECUAL\SWITCH\" />
+    <Folder Include="3-APP\" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
